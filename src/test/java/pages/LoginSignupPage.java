@@ -23,6 +23,15 @@ public class LoginSignupPage {
     @FindBy(css = "input[data-qa='password']")
     private WebElement passwordInput;
 
+    @FindBy(css = "input[data-qa='login-email']")
+    private WebElement loginEmailInput;
+
+    @FindBy(css = "input[data-qa='login-password']")
+    private WebElement loginPasswordInput;
+
+    @FindBy(css = "button[data-qa='login-button']")
+    private WebElement loginButton;
+
     @FindBy(css = "input[id='id_gender1']")
     private WebElement titleMrRadioButton;
 
@@ -74,6 +83,12 @@ public class LoginSignupPage {
     @FindBy(css = "a[data-qa='continue-button']")
     private WebElement continueButton;
 
+    @FindBy(css = "a[href='/logout']")
+    private WebElement logoutButton;
+
+    @FindBy(xpath = "//p[text()='Your email or password is incorrect!']")
+    private WebElement invalidLoginMessage;
+
     public LoginSignupPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -120,5 +135,23 @@ public class LoginSignupPage {
 
     public void clicarEmContinue() {
         continueButton.click();
+    }
+
+    public void clicarEmLogout() {
+        logoutButton.click();
+    }
+
+    public void preencherLogin(String email, String password) {
+        loginEmailInput.sendKeys(email);
+        loginPasswordInput.sendKeys(password);
+        loginPasswordInput.submit();
+    }
+
+    public void clicarBotaoLogin() {
+        loginButton.click();
+    }
+
+    public boolean isInvalidLoginMessageDisplayed() {
+        return invalidLoginMessage.isDisplayed();
     }
 }

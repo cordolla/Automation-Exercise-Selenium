@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SignupModel {
+    private String email;
     private String password;
     private String firstName;
     private String lastName;
