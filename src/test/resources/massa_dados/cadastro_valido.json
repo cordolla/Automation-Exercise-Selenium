@@ -1,0 +1,16 @@
+{
+  "password": "senhaForte123",
+  "firstName": "Marcelo",
+  "lastName": "Silva",
+  "company": "QA Corp",
+  "address1": "Rua das Flores, 123",
+  "address2": "Apto 101",
+  "day": "10",
+  "month": "April",
+  "year": "1990",
+  "country": "Canada",
+  "state": "Ceará",
+  "city": "Quixadá",
+  "zipcode": "63900-000",
+  "mobileNumber": "88999999999"
+}
